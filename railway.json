@@ -1,6 +1,12 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "npm install && npm run build"
+  },
   "deploy": {
-    "startCommand": "npx medusa db:setup && npm run start" 
+    "startCommand": "cat > .env << EOF\nDATABASE_URL=$DATABASE_URL\nREDIS_URL=$REDIS_URL\nJWT_SECRET=$JWT_SECRET\nCOOKIE_SECRET=$COOKIE_SECRET\nSTORE_CORS=$STORE_CORS\nADMIN_CORS=$ADMIN_CORS\nAUTH_CORS=$AUTH_CORS\nNODE_ENV=production\nEOF\nnpx medusa db:setup && npm run start",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
   }
 }
