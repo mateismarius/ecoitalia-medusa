@@ -1,6 +1,6 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "deploy": {
-    "startCommand": "npx medusa db:setup && npm run start"
+    "startCommand": "npx medusa db:setup && npm run start" 
   }
 }
