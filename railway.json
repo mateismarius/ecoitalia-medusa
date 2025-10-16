@@ -1,6 +1,6 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "deploy": {
-    "startCommand": "echo DATABASE_URL=$DATABASE_URL > .env && echo REDIS_URL=$REDIS_URL >> .env && echo JWT_SECRET=$JWT_SECRET >> .env && echo COOKIE_SECRET=$COOKIE_SECRET >> .env && echo NODE_ENV=production >> .env && npx medusa db:migrate && npm run start"
+    "startCommand": "echo DATABASE_URL=$DATABASE_URL > .env && echo REDIS_URL=$REDIS_URL >> .env && echo JWT_SECRET=$JWT_SECRET >> .env && echo COOKIE_SECRET=$COOKIE_SECRET >> .env && echo NODE_ENV=production >> .env && npm run build && npx medusa db:migrate && npm run start"
   }
 }
